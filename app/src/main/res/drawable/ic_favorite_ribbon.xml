@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A bookmark ribbon: dark fill with a white outline, so it reads on light and dark cards alike. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="26dp"
+    android:height="36dp"
+    android:viewportWidth="26"
+    android:viewportHeight="36">
+    <path
+        android:fillColor="@color/ribbon_fill"
+        android:pathData="M1,0 H25 V34 L13,27 L1,34 Z"
+        android:strokeColor="@color/ribbon_stroke"
+        android:strokeLineJoin="round"
+        android:strokeWidth="1.5" />
+</vector>

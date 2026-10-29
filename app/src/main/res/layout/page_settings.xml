@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/settings_scroll"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:paddingTop="@dimen/settings_top"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:id="@+id/settings_content"
+        android:layout_width="@dimen/settings_column_width"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/screen_margin_vertical">
+
+
+        <!-- Each setting is followed by the dropdown that opens under it while it (or something in it) has focus. -->
+        <com.nison.freedeck.ui.settings.SettingRow
+            android:id="@+id/setting_default_launcher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/settings_row_gap"
+            app:rowIcon="@drawable/ic_nav_home"
+            app:rowTitle="@string/setting_default_launcher" />
+
+        <com.nison.freedeck.ui.settings.SettingRow
+            android:id="@+id/setting_navigation_sound"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rowIcon="@drawable/ic_setting_sound"
+            app:rowTitle="@string/setting_navigation_sound" />
+
+        <FrameLayout
+            android:id="@+id/dropdown_navigation_sound"
+            style="@style/SettingsDropdown" />
+
+        <com.nison.freedeck.ui.settings.SettingRow
+            android:id="@+id/setting_apps_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/settings_row_gap"
+            app:rowIcon="@drawable/ic_nav_apps"
+            app:rowTitle="@string/setting_apps_layout" />
+
+        <FrameLayout
+            android:id="@+id/dropdown_apps_layout"
+            style="@style/SettingsDropdown" />
+
+        <com.nison.freedeck.ui.settings.SettingRow
+            android:id="@+id/setting_app_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/settings_row_gap"
+            app:rowIcon="@drawable/ic_setting_theme"
+            app:rowTitle="@string/setting_app_theme" />
+
+        <FrameLayout
+            android:id="@+id/dropdown_app_theme"
+            style="@style/SettingsDropdown" />
+
+        <com.nison.freedeck.ui.settings.SettingRow
+            android:id="@+id/setting_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/settings_row_gap"
+            app:rowIcon="@drawable/ic_setting_background"
+            app:rowTitle="@string/setting_background" />
+
+        <FrameLayout
+            android:id="@+id/dropdown_background"
+            style="@style/SettingsDropdown" />
+
+        <com.nison.freedeck.ui.settings.SettingRow
+            android:id="@+id/setting_language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/settings_row_gap"
+            app:rowIcon="@drawable/ic_setting_language"
+            app:rowTitle="@string/setting_language" />
+
+        <FrameLayout
+            android:id="@+id/dropdown_language"
+            style="@style/SettingsDropdown" />
+
+        <com.nison.freedeck.ui.settings.SettingRow
+            android:id="@+id/setting_font"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/settings_row_gap"
+            app:rowIcon="@drawable/ic_setting_font"
+            app:rowTitle="@string/setting_font" />
+
+        <FrameLayout
+            android:id="@+id/dropdown_font"
+            style="@style/SettingsDropdown" />
+
+
+        <com.nison.freedeck.ui.settings.SettingRow
+            android:id="@+id/setting_navbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/settings_row_gap"
+            app:rowIcon="@drawable/ic_setting_clock"
+            app:rowTitle="@string/setting_navbar" />
+
+        <FrameLayout
+            android:id="@+id/dropdown_navbar"
+            style="@style/SettingsDropdown" />
+
+        <com.nison.freedeck.ui.settings.SettingRow
+            android:id="@+id/setting_reorder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/settings_row_gap"
+            app:rowIcon="@drawable/ic_setting_reorder"
+            app:rowTitle="@string/setting_reorder" />
+
+        <FrameLayout
+            android:id="@+id/dropdown_reorder"
+            style="@style/SettingsDropdown" />
+
+        <com.nison.freedeck.ui.settings.SettingRow
+            android:id="@+id/setting_screensaver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/settings_row_gap"
+            app:rowIcon="@drawable/ic_setting_tv"
+            app:rowTitle="@string/setting_screensaver" />
+
+        <FrameLayout
+            android:id="@+id/dropdown_screensaver"
+            style="@style/SettingsDropdown" />
+
+        <Button
+            android:id="@+id/settings_more"
+            style="@style/ActionButton"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/settings_section_gap"
+            android:text="@string/settings_more_settings" />
+
+        <!-- Room under the last setting so even it can be scrolled up to the top; sized when the page is measured. -->
+        <View
+            android:id="@+id/settings_end_space"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+    </LinearLayout>
+</ScrollView>

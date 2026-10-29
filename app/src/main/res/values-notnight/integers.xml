@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark dots on a light screen look heavier than light dots on a dark one, so they are fainter. -->
+    <integer name="map_dots_alpha">120</integer>
+    <integer name="glow_start_alpha">110</integer>
+</resources>

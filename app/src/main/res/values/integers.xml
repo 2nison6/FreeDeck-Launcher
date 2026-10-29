@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Opacity (0-255) of the world map dots, so the pin and card stand out. -->
+    <integer name="map_dots_alpha">170</integer>
+
+    <!-- Cards per row on the All Apps page. -->
+    <integer name="apps_grid_columns">5</integer>
+
+    <!-- Cards per row on the Home page (one row of favorites). -->
+    <integer name="home_grid_columns">6</integer>
+
+    <!-- Opacity (0-255) of the glow at its strongest corner. -->
+    <integer name="glow_start_alpha">150</integer>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.nison.freedeck.ui.common.GlowView
+        android:id="@+id/apps_glow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Padding is set in code: it centres exactly the chosen number of rows and columns, and clips the rest. -->
+    <com.nison.freedeck.ui.apps.AppGridView
+        android:id="@+id/apps_grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/navbar_height"
+        android:clipChildren="false"
+        android:clipToPadding="true" />
+
+    <TextView
+        android:id="@+id/apps_empty"
+        style="@style/PagePlaceholderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/apps_empty"
+        android:visibility="gone" />
+
+</FrameLayout>

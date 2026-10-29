@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/options_dialog_width"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card_background"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/wifi_card_padding">
+
+    <com.nison.freedeck.ui.common.AspectFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/app_card_background"
+        app:aspectRatio="1.7778"
+        app:cornerRadius="@dimen/app_card_radius">
+
+        <ImageView
+            android:id="@+id/options_icon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop" />
+    </com.nison.freedeck.ui.common.AspectFrameLayout>
+
+    <TextView
+        android:id="@+id/options_title"
+        style="@style/DetailTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/options_section_gap"
+        android:ellipsize="end"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/options_version"
+        style="@style/NavBarText.Secondary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/detail_text" />
+
+    <TextView
+        android:id="@+id/options_body"
+        style="@style/DetailText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/options_section_gap"
+        android:ellipsize="end"
+        android:gravity="center_horizontal"
+        android:lineSpacingMultiplier="1.1"
+        android:maxLines="5"
+        android:singleLine="false"
+        android:textColor="@color/text_secondary" />
+
+    <Button
+        android:id="@+id/options_favorite"
+        style="@style/ActionButton"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/detail_button_margin" />
+
+
+</LinearLayout>

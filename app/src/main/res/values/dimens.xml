@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TVs overscan; keep content inside the safe area. -->
+    <dimen name="screen_margin_horizontal">56dp</dimen>
+    <dimen name="screen_margin_vertical">32dp</dimen>
+
+    <dimen name="navbar_dock_radius">40dp</dimen>
+    <dimen name="navbar_height">120dp</dimen>
+    <dimen name="navbar_padding_vertical">12dp</dimen>
+    <dimen name="navbar_row_spacing">6dp</dimen>
+    <dimen name="navbar_icon_size">28dp</dimen>
+    <dimen name="navbar_icon_spacing">8dp</dimen>
+    <dimen name="navbar_divider_width">2dp</dimen>
+    <dimen name="navbar_divider_height">22dp</dimen>
+    <dimen name="navbar_divider_margin">16dp</dimen>
+
+    <dimen name="nav_button_size">56dp</dimen>
+    <dimen name="nav_button_padding">14dp</dimen>
+    <dimen name="nav_button_spacing">4dp</dimen>
+
+    <dimen name="page_placeholder_text">48sp</dimen>
+
+    <dimen name="detail_row_spacing">4dp</dimen>
+    <dimen name="detail_button_margin">12dp</dimen>
+    <dimen name="detail_title_text">18sp</dimen>
+    <dimen name="detail_text">14sp</dimen>
+    <dimen name="detail_label_width">108dp</dimen>
+    <dimen name="action_button_height">36dp</dimen>
+    <dimen name="action_button_padding">18dp</dimen>
+    <dimen name="action_button_radius">18dp</dimen>
+    <dimen name="action_button_text">14sp</dimen>
+
+    <dimen name="wifi_card_width">280dp</dimen>
+    <dimen name="wifi_card_padding">16dp</dimen>
+    <dimen name="wifi_card_radius">14dp</dimen>
+    <dimen name="wifi_card_gap">28dp</dimen>
+    <dimen name="wifi_card_anchor_inset">16dp</dimen>
+    <dimen name="wifi_card_icon_size">20dp</dimen>
+
+    <dimen name="map_pin_radius">4dp</dimen>
+    <dimen name="map_pulse_radius">18dp</dimen>
+    <dimen name="map_pulse_stroke">1.5dp</dimen>
+    <dimen name="map_connector_width">1.5dp</dimen>
+    <dimen name="map_connector_end_radius">3.5dp</dimen>
+
+    <dimen name="home_favorites_bottom">40dp</dimen>
+    <dimen name="apps_grid_horizontal_padding">45dp</dimen>
+    <dimen name="app_card_margin">11dp</dimen>
+    <dimen name="app_card_radius">14dp</dimen>
+    <dimen name="app_icon_padding">20dp</dimen>
+    <dimen name="favorite_ribbon_width">26dp</dimen>
+    <dimen name="favorite_ribbon_height">36dp</dimen>
+    <dimen name="favorite_ribbon_margin_end">16dp</dimen>
+    <dimen name="favorite_heart_size">14dp</dimen>
+    <dimen name="favorite_heart_margin_top">7dp</dimen>
+    <dimen name="app_label_text">13sp</dimen>
+    <dimen name="add_card_icon_padding">16dp</dimen>
+    <dimen name="picker_list_width">352dp</dimen>
+    <dimen name="picker_list_height">400dp</dimen>
+    <dimen name="picker_card_width">176dp</dimen>
+    <dimen name="picker_card_margin">12dp</dimen>
+    <dimen name="picker_badge_size">28dp</dimen>
+    <dimen name="bg_tile_margin">5dp</dimen>
+    <dimen name="chip_height">44dp</dimen>
+    <dimen name="chip_gap">8dp</dimen>
+    <dimen name="chip_text">16sp</dimen>
+    <dimen name="dropdown_indent">8dp</dimen>
+    <dimen name="banner_bottom_margin">40dp</dimen>
+    <dimen name="banner_padding_horizontal">32dp</dimen>
+    <dimen name="banner_padding_vertical">20dp</dimen>
+    <dimen name="banner_button_width">160dp</dimen>
+    <dimen name="phone_dialog_width">640dp</dimen>
+    <dimen name="phone_dialog_padding">28dp</dimen>
+    <dimen name="phone_dialog_gap">16dp</dimen>
+    <dimen name="phone_address_text">12sp</dimen>
+    <dimen name="phone_qr_size">220dp</dimen>
+    <dimen name="toggle_track_width">48dp</dimen>
+    <dimen name="toggle_track_height">26dp</dimen>
+    <dimen name="toggle_track_radius">13dp</dimen>
+    <dimen name="toggle_thumb_size">20dp</dimen>
+    <dimen name="toggle_thumb_inset">3dp</dimen>
+    <dimen name="options_dialog_width">300dp</dimen>
+    <dimen name="options_section_gap">14dp</dimen>
+
+    <dimen name="settings_top">16dp</dimen>
+    <dimen name="settings_column_width">620dp</dimen>
+    <dimen name="settings_row_height">52dp</dimen>
+    <dimen name="settings_row_gap">8dp</dimen>
+    <dimen name="settings_row_radius">12dp</dimen>
+    <dimen name="settings_row_padding">20dp</dimen>
+    <dimen name="settings_icon_size">24dp</dimen>
+    <dimen name="settings_chevron_size">20dp</dimen>
+    <dimen name="settings_icon_gap">16dp</dimen>
+    <dimen name="settings_section_gap">24dp</dimen>
+    <dimen name="settings_row_text">18sp</dimen>
+
+    <dimen name="navbar_text_primary">22sp</dimen>
+    <dimen name="navbar_text_secondary">16sp</dimen>
+    <!-- AM / PM, smaller than the digits it follows. -->
+    <dimen name="navbar_text_suffix">13sp</dimen>
+    <dimen name="navbar_suffix_gap">4dp</dimen>
+    <dimen name="navbar_text_date">18sp</dimen>
+</resources>

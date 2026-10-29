@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dark at the top edge, fading to fully transparent, so the nav bar reads over the map beneath it. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="270"
+        android:centerColor="@color/navbar_fade_center"
+        android:endColor="@color/navbar_fade_end"
+        android:startColor="@color/navbar_fade_start" />
+</shape>

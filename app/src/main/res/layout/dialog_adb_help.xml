@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/screen_margin_horizontal"
+    android:paddingBottom="@dimen/banner_bottom_margin">
+
+    <!-- Same bar as the other questions, but with the reason and the one command that fixes it. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/banner_padding_horizontal"
+        android:paddingVertical="@dimen/banner_padding_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/adb_help_reason"
+                style="@style/DetailTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="false" />
+
+            <TextView
+                android:id="@+id/adb_help_command"
+                style="@style/DetailText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/phone_dialog_gap"
+                android:singleLine="false"
+                android:textColor="@color/text_secondary"
+                android:textIsSelectable="false" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/adb_help_ok"
+            style="@style/ActionButton"
+            android:layout_width="@dimen/banner_button_width"
+            android:layout_marginStart="@dimen/phone_dialog_gap"
+            android:text="@string/adb_help_ok" />
+    </LinearLayout>
+</FrameLayout>

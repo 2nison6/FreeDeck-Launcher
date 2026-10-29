@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/phone_dialog_width"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card_background"
+    android:orientation="vertical"
+    android:padding="@dimen/phone_dialog_padding">
+
+    <TextView
+        android:id="@+id/phone_upload_title"
+        style="@style/DetailTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/phone_upload_title" />
+
+    <TextView
+        android:id="@+id/phone_upload_steps"
+        style="@style/NavBarText.Secondary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/phone_dialog_gap"
+        android:gravity="center_horizontal"
+        android:singleLine="false"
+        android:text="@string/phone_upload_steps" />
+
+    <ImageView
+        android:id="@+id/phone_upload_qr"
+        android:layout_width="@dimen/phone_qr_size"
+        android:layout_height="@dimen/phone_qr_size"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/phone_dialog_gap"
+        android:contentDescription="@null" />
+
+    <TextView
+        android:id="@+id/phone_upload_address"
+        style="@style/NavBarText.Secondary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/phone_dialog_gap"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/phone_address_text" />
+
+    <TextView
+        android:id="@+id/phone_upload_timer"
+        style="@style/NavBarText.Secondary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/phone_dialog_gap"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/phone_upload_status"
+        style="@style/NavBarText.Secondary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/phone_dialog_gap"
+        android:gravity="center_horizontal"
+        android:singleLine="false" />
+
+    <LinearLayout
+        android:id="@+id/phone_upload_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/phone_dialog_gap"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/phone_upload_cancel"
+            style="@style/ActionButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/phone_dialog_gap"
+            android:text="@string/phone_upload_cancel" />
+
+        <Button
+            android:id="@+id/phone_upload_regenerate"
+            style="@style/ActionButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/phone_upload_regenerate" />
+    </LinearLayout>
+</LinearLayout>

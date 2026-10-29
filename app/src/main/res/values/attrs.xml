@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DetailRow">
+        <attr name="rowLabel" format="string|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="AspectFrameLayout">
+        <!-- Width divided by height. -->
+        <attr name="aspectRatio" format="float" />
+        <!-- Rounds the corners and clips the contents to them. -->
+        <attr name="cornerRadius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="AppGridView">
+        <!-- Cards per row; defaults to @integer/apps_grid_columns. -->
+        <attr name="columns" format="integer" />
+        <!-- Whether a long press opens the app's details card. Defaults to true. -->
+        <attr name="longPress" format="boolean" />
+        <!-- One row that scrolls sideways instead of a wrapping grid; "columns" is then how many cards fit on screen. -->
+        <attr name="singleRow" format="boolean" />
+        <!-- Ends the row with a "+" card that asks which app to add as a favorite. Defaults to false. -->
+        <attr name="addCard" format="boolean" />
+        <!-- Whether a long press arranges the cards (wiggling them, left / right to move) instead of opening details. Defaults to false. -->
+        <attr name="reorder" format="boolean" />
+        <!-- Whether favorite apps carry the ribbon badge. Defaults to true. -->
+        <attr name="favoriteBadge" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SettingRow">
+        <attr name="rowTitle" format="string|reference" />
+        <attr name="rowIcon" format="reference" />
+    </declare-styleable>
+</resources>

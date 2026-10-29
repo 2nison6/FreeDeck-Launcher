@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/setting_icon"
+        android:layout_width="@dimen/settings_icon_size"
+        android:layout_height="@dimen/settings_icon_size"
+        android:duplicateParentState="true"
+        android:importantForAccessibility="no"
+        android:tint="@color/row_icon_tint" />
+
+    <TextView
+        android:id="@+id/setting_title"
+        style="@style/SettingRowTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/settings_icon_gap"
+        android:layout_weight="1"
+        android:duplicateParentState="true" />
+
+    <TextView
+        android:id="@+id/setting_value"
+        style="@style/SettingRowValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:duplicateParentState="true" />
+
+    <!-- An on / off switch, shown instead of the value and the arrow for rows that simply turn something on or off. -->
+    <ImageView
+        android:id="@+id/setting_switch"
+        android:layout_width="@dimen/toggle_track_width"
+        android:layout_height="@dimen/toggle_track_height"
+        android:duplicateParentState="true"
+        android:importantForAccessibility="no"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/setting_chevron"
+        android:layout_width="@dimen/settings_chevron_size"
+        android:layout_height="@dimen/settings_chevron_size"
+        android:layout_marginStart="@dimen/settings_icon_gap"
+        android:duplicateParentState="true"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_chevron_right"
+        android:tint="@color/row_icon_tint" />
+</merge>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false">
+
+    <com.nison.freedeck.ui.common.GlowView
+        android:id="@+id/home_glow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Along the bottom edge. Clipped at its padding so only the 6 cards that fit show, never a sliver of the 7th;
+         a focused card grows within its own margin, so nothing visible is cut off. -->
+    <com.nison.freedeck.ui.apps.AppGridView
+        android:id="@+id/home_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:clipChildren="false"
+        android:clipToPadding="true"
+        app:columns="@integer/home_grid_columns"
+        app:addCard="true"
+        app:favoriteBadge="false"
+        app:longPress="true"
+        app:reorder="true"
+        app:singleRow="true"
+        android:paddingHorizontal="@dimen/apps_grid_horizontal_padding"
+        android:paddingBottom="@dimen/home_favorites_bottom" />
+
+</FrameLayout>

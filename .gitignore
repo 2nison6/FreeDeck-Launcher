@@ -1,0 +1,17 @@
+# Build output and caches
+build/
+.gradle/
+.idea/
+*.iml
+.DS_Store
+
+# Machine-specific
+local.properties
+
+# Signing: never commit keys or passwords
+keystore.properties
+*.jks
+*.keystore
+
+# Scratch copy of the latest build (released APKs live in apks/)
+dist/

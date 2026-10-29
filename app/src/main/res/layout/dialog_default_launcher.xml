@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/screen_margin_horizontal"
+    android:paddingBottom="@dimen/banner_bottom_margin">
+
+    <!-- A bar docked to the bottom of the screen, like a cookie notice: the question on the left, the answers on the right. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/banner_padding_horizontal"
+        android:paddingVertical="@dimen/banner_padding_vertical">
+
+        <TextView
+            style="@style/DetailTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="false"
+            android:text="@string/default_launcher_prompt_title" />
+
+        <Button
+            android:id="@+id/default_launcher_deny"
+            style="@style/ActionButton"
+            android:layout_width="@dimen/banner_button_width"
+            android:layout_marginStart="@dimen/phone_dialog_gap"
+            android:text="@string/default_launcher_prompt_deny" />
+
+        <Button
+            android:id="@+id/default_launcher_allow"
+            style="@style/ActionButton"
+            android:layout_width="@dimen/banner_button_width"
+            android:layout_marginStart="@dimen/settings_row_gap"
+            android:text="@string/default_launcher_prompt_allow" />
+    </LinearLayout>
+</FrameLayout>

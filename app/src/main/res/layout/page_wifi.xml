@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.nison.freedeck.ui.map.WorldMapView
+        android:id="@+id/wifi_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no" />
+
+    <!-- Moved next to the pin in code (WifiPage.positionCard). -->
+    <LinearLayout
+        android:id="@+id/wifi_card"
+        android:layout_width="@dimen/wifi_card_width"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:background="@drawable/card_background"
+        android:orientation="vertical"
+        android:padding="@dimen/wifi_card_padding">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/wifi_card_icon"
+                android:layout_width="@dimen/wifi_card_icon_size"
+                android:layout_height="@dimen/wifi_card_icon_size"
+                android:importantForAccessibility="yes"
+                android:src="@drawable/ic_nav_wifi" />
+
+            <TextView
+                android:id="@+id/wifi_name"
+                style="@style/DetailTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/navbar_icon_spacing"
+                android:layout_weight="1"
+                android:ellipsize="end" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/wifi_location"
+            style="@style/NavBarText.Secondary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:textSize="@dimen/detail_text" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="@dimen/detail_row_spacing"
+            android:background="@color/divider" />
+
+        <com.nison.freedeck.ui.common.DetailRow
+            android:id="@+id/wifi_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rowLabel="@string/row_status" />
+
+        <com.nison.freedeck.ui.common.DetailRow
+            android:id="@+id/wifi_ip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/detail_row_spacing"
+            app:rowLabel="@string/row_ip" />
+
+        <com.nison.freedeck.ui.common.DetailRow
+            android:id="@+id/wifi_signal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/detail_row_spacing"
+            app:rowLabel="@string/row_signal" />
+
+        <com.nison.freedeck.ui.common.DetailRow
+            android:id="@+id/wifi_band"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/detail_row_spacing"
+            app:rowLabel="@string/row_band" />
+
+        <Button
+            android:id="@+id/wifi_more_settings"
+            style="@style/ActionButton"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/detail_button_margin"
+            android:nextFocusLeft="@+id/wifi_more_settings"
+            android:nextFocusRight="@+id/wifi_more_settings"
+            android:nextFocusUp="@+id/nav_wifi"
+            android:text="@string/wifi_more_settings" />
+    </LinearLayout>
+
+</merge>

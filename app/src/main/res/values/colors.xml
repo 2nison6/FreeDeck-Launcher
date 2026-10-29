@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#FF000000</color>
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#B3FFFFFF</color>
+    <!-- Frosted glass: a smoky tint, a bright rim and a soft highlight along the top, readable on any picture. -->
+    <color name="glass_fill">#3D16161A</color>
+    <color name="glass_rim">#66FFFFFF</color>
+    <color name="glass_highlight_top">#33FFFFFF</color>
+    <color name="glass_highlight_bottom">#00FFFFFF</color>
+    <color name="row_surface">#1AFFFFFF</color>
+    <!-- A soft shade along the top edge so the nav bar reads on any picture, and a shadow under its text. -->
+    <color name="navbar_scrim_start">#8C000000</color>
+    <color name="navbar_scrim_end">#00000000</color>
+    <color name="text_shadow">#B3000000</color>
+    <color name="nav_selected">#33FFFFFF</color>
+    <!-- Status colors: bright on the dark background, darker variants on the white focus highlight. -->
+    <color name="status_good">#FF4CAF50</color>
+    <color name="status_good_on_light">#FF2E7D32</color>
+    <color name="status_warning">#FFFF9800</color>
+    <color name="status_warning_on_light">#FFE65100</color>
+    <color name="status_bad">#FFF44336</color>
+    <color name="status_bad_on_light">#FFC62828</color>
+    <color name="app_card_surface">#FF1C1C1E</color>
+    <color name="ribbon_fill">#F2101010</color>
+    <color name="ribbon_stroke">#FFFFFFFF</color>
+    <color name="glow_default">#FF5C7CFA</color>
+    <color name="card_background">#F2121212</color>
+    <color name="map_connector">#99FFFFFF</color>
+    <color name="divider">#4DFFFFFF</color>
+    <!-- Text on a focused (highlighted) row that is dimmer than the main text. -->
+    <color name="row_text_dim_on_focus">#99000000</color>
+    <!-- The +/- badge on a picker card, and the nav bar's fade over the map. -->
+    <color name="badge_surface">#D9000000</color>
+    <color name="badge_icon">#FFFFFFFF</color>
+    <color name="navbar_fade_start">#FA000000</color>
+    <color name="navbar_fade_center">#CC000000</color>
+    <color name="navbar_fade_end">#00000000</color>
+    <!-- Dots of the world map. -->
+    <color name="map_dots">#FFFFFFFF</color>
+</resources>
