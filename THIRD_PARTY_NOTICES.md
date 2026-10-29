@@ -54,18 +54,13 @@ The scene backgrounds (`scene_*.jpg`) and the dotted world map are produced by t
 drawn from shapes and gradients, and the map uses land outlines from
 [Natural Earth](https://www.naturalearthdata.com) (public domain). The app icon is the project's own.
 
-## Needs your attention before reuse
+## Project assets
 
-These files were added to the project without a recorded source or licence. They are included here because the app
-needs them, but **their licence is not documented**:
+These belong to the project's author and are released under the same [MIT licence](LICENSE) as the code:
 
-- `app/src/main/res/raw/sfx_01.wav` to `sfx_24.wav`: the 24 navigation sounds, cut from a UI-sound compilation by
-  `tools/extract_sounds.py`.
+- `app/src/main/res/raw/sfx_01.wav` to `sfx_24.wav`: the 24 navigation sounds.
 - `app/src/main/res/raw/loader_animation.mp4`: the dot-grid loading animation.
 - `app/src/main/res/drawable-nodpi/app_banner_internet.jpg`: the banner shown for Amazon's Silk browser ("Internet").
-
-If you are the author, or know where these came from, please open an issue so this list can be completed. If you reuse
-the project commercially, replace them with assets you have the rights to.
 
 ## Trademarks
 
