@@ -157,8 +157,9 @@ Assamese (অসমীয়া). Choosing one rebuilds the screen straight away
 
 You will install the APK onto the Fire TV from a computer (recommended) or directly on the TV with the Downloader app.
 
-**Download:** every release APK is in the [`apks/`](apks/) folder (for example `apks/FreeDeck-Launcher-v1.0.apk`), with
-a `.sha256` checksum next to it. The newest version is listed in [`apks/README.md`](apks/README.md).
+**Download:** every release has its own folder in [`apks/`](apks/), holding only that version's files, for example
+`apks/v1.0/FreeDeck-Launcher-v1.0.apk` with its `.sha256` checksum beside it. All versions are listed in
+[`apks/README.md`](apks/README.md).
 
 ### 1. Prepare the Fire TV
 
@@ -347,16 +348,18 @@ Back the keystore up somewhere safe; if you lose it, users have to uninstall bef
 
 1. Bump `versionCode` and `versionName` in `app/build.gradle` (versions start at `1.0`).
 2. `./gradlew clean testDebugUnitTest lintRelease assembleRelease`
-3. Copy the APK into `apks/` as `FreeDeck-Launcher-vX.Y.apk`, write its checksum, and add a line to `apks/README.md`:
+3. Put the APK in its own version folder, `apks/vX.Y/`, with its checksum, and add a row to `apks/README.md`:
    ```bash
-   cp app/build/outputs/apk/release/app-release.apk apks/FreeDeck-Launcher-v1.1.apk
-   (cd apks && shasum -a 256 FreeDeck-Launcher-v1.1.apk > FreeDeck-Launcher-v1.1.apk.sha256)
+   mkdir -p apks/v1.1
+   cp app/build/outputs/apk/release/app-release.apk apks/v1.1/FreeDeck-Launcher-v1.1.apk
+   (cd apks/v1.1 && shasum -a 256 FreeDeck-Launcher-v1.1.apk > FreeDeck-Launcher-v1.1.apk.sha256)
    ```
+   Older version folders stay as they are.
 4. Commit, tag (`git tag v1.1 && git push --tags`) and attach the APK to a GitHub Release.
 
 ### Publishing the APK on a website
 
-- Link straight to the file in a GitHub Release (or to `apks/`), or host the APK yourself as a plain download link. A short
+- Link straight to the file in a GitHub Release (or to the file in `apks/vX.Y/`), or host the APK yourself as a plain download link. A short
   link is easy to type into Downloader on the TV.
 - Publish the SHA-256 next to the download so people can check the file:
   ```bash
