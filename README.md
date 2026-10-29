@@ -8,6 +8,15 @@ bar, your own wallpapers, a built-in screensaver, and a Home button that opens F
 > FreeDeck Launcher is made only for Amazon Fire TV and Fire TV Sticks (Fire OS). It is not tested on Android TV or
 > Google TV.
 
+## Two ways to use this project
+
+**Just want the app?** You do not need to build anything. Download the ready-made, signed APK from the FreeDeck
+website or from the [`apks/`](apks/) folder (and the repository's Releases page), then follow [Install](#install).
+That is the same app everyone else uses, with no changes.
+
+**Want your own version?** The code is open under the [MIT licence](LICENSE). Fork it, change what you like, and build your
+own APK: see [Make your own version](#make-your-own-version).
+
 ---
 
 ## Features
@@ -169,7 +178,7 @@ You will install the APK onto the Fire TV from a computer (recommended) or direc
    - **ADB debugging**
    - **Install unknown apps** (or **Apps from Unknown Sources**). On newer Fire OS this is per app: allow it for
      *Downloader* if you use that method.
-3. Find the TV's IP address: **Settings → My Fire TV → About → Network** (for example `192.168.0.9`).
+3. Find the TV's IP address: **Settings → My Fire TV → About → Network** (for example `192.168.1.50`).
 
 ### 2. Install ADB on your computer
 
@@ -202,7 +211,7 @@ adb version
 Your computer and the TV must be on the same Wi-Fi.
 
 ```bash
-adb connect 192.168.0.9:5555      # use your TV's IP
+adb connect 192.168.1.50:5555      # use your TV's IP
 adb devices                       # the TV should be listed as "device"
 ```
 
@@ -211,14 +220,14 @@ The first time, the TV asks **"Allow USB debugging?"**. Tick *Always allow from 
 ### 4. Install FreeDeck Launcher
 
 ```bash
-adb -s 192.168.0.9:5555 install -r FreeDeck-Launcher.apk
+adb -s 192.168.1.50:5555 install -r apks/v1.0/FreeDeck-Launcher-v1.0.apk
 ```
 
 `-r` replaces an existing install and keeps its data. If you get `INSTALL_FAILED_VERSION_DOWNGRADE`, the TV already
 has a newer version; add `-d` to install over it anyway:
 
 ```bash
-adb -s 192.168.0.9:5555 install -r -d FreeDeck-Launcher.apk
+adb -s 192.168.1.50:5555 install -r -d apks/v1.0/FreeDeck-Launcher-v1.0.apk
 ```
 
 ### 5. Allow FreeDeck to be your home screen
@@ -228,7 +237,7 @@ so FreeDeck turns it on itself, and for that it needs the `WRITE_SECURE_SETTINGS
 popup for this permission; it has to be granted once. Run this on your computer:
 
 ```bash
-adb -s 192.168.0.9:5555 shell pm grant com.nison.freedeck android.permission.WRITE_SECURE_SETTINGS
+adb -s 192.168.1.50:5555 shell pm grant com.nison.freedeck android.permission.WRITE_SECURE_SETTINGS
 ```
 
 Then open FreeDeck and choose **Allow** on *"Allow FreeDeck to be your Default Launcher"* (or turn on **Make Default
@@ -265,8 +274,8 @@ command to run from a computer instead.
 | --- | --- |
 | Connect | `adb connect <tv-ip>:5555` |
 | List devices | `adb devices` |
-| Install or update | `adb -s <tv-ip>:5555 install -r FreeDeck-Launcher.apk` |
-| Install over a newer version | `adb -s <tv-ip>:5555 install -r -d FreeDeck-Launcher.apk` |
+| Install or update | `adb -s <tv-ip>:5555 install -r apks/v1.0/FreeDeck-Launcher-v1.0.apk` |
+| Install over a newer version | `adb -s <tv-ip>:5555 install -r -d apks/v1.0/FreeDeck-Launcher-v1.0.apk` |
 | Grant the permission | `adb -s <tv-ip>:5555 shell pm grant com.nison.freedeck android.permission.WRITE_SECURE_SETTINGS` |
 | Check the permission | `adb -s <tv-ip>:5555 shell dumpsys package com.nison.freedeck \| grep WRITE_SECURE_SETTINGS` |
 | Open FreeDeck | `adb -s <tv-ip>:5555 shell am start -n com.nison.freedeck/.ui.main.MainActivity` |
@@ -366,6 +375,32 @@ Back the keystore up somewhere safe; if you lose it, users have to uninstall bef
   shasum -a 256 -c FreeDeck-Launcher-v1.0.apk.sha256
   ```
 
+### Make your own version
+
+You can fork this project and ship your own flavour under the [MIT licence](LICENSE): keep the licence file and the
+copyright notice, and see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the fonts, libraries and services you
+inherit. A sensible order:
+
+1. **Fork and clone** the repository.
+2. **Use your own package name**, so your build installs next to the original instead of replacing it, and so updates
+   from the two never mix. The quickest way needs no code change:
+   ```bash
+   ./gradlew assembleRelease -PlauncherApplicationId=com.yourname.yourdeck
+   ```
+   To make it permanent, change the default in `app/build.gradle` (`applicationId`). The `namespace`
+   (`com.nison.freedeck`) is only the code's package and can stay.
+3. **Rename it**: change `app_name` in `app/src/main/res/values/strings.xml`.
+4. **Change the look**: icon and banner `app/src/main/res/drawable-nodpi/app_icon.png`, colours in
+   `res/values/colors.xml`, fonts in `res/font/`, backgrounds (regenerate them with `tools/generate_scenes.py`),
+   sounds in `res/raw/`, text in `res/values*/strings.xml`.
+5. **Sign with your own key** (see [Release signing](#release-signing)). Never reuse this project's key; you do not have it.
+6. **Check the services**: weather comes from Open-Meteo's free, non-commercial service and location from ipwho.is. Swap them
+   in `data/weather/WeatherRepository.java` and `data/location/LocationRepository.java` if you need something else.
+7. **Replace assets you cannot redistribute.** The notices file lists a few sounds and images with no recorded licence.
+8. **Do not call it "FreeDeck"** if it differs a lot from this project, so people can tell the two apart.
+
+A pull request back to this repository is welcome if your change would help everyone: see [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ### Project layout
 
 ```
@@ -374,7 +409,11 @@ app/src/main/java/com/nison/freedeck/
   system/      default launcher, Home-button service, Fire TV settings, ADB self-grant, network status
   ui/          home, apps grid, settings, screensaver, dialogs
 app/src/main/res/   layouts, drawables, sounds, fonts, translations
+apks/               every released APK, one folder per version (apks/v1.0/ ...)
+docs/screenshots/   the pictures used in this README
 tools/              scripts that generate scenes, the world map and the sounds
+licenses/           licence texts for bundled third-party files
+.github/            CI build and issue templates
 ```
 
 ---
@@ -390,7 +429,17 @@ tools/              scripts that generate scenes, the world map and the sounds
 
 ---
 
+## Contributing
+
+Bug reports, fixes and translations are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Licence
+
+FreeDeck Launcher is released under the [MIT licence](LICENSE). Bundled fonts, libraries and services have their own
+terms, listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
 ## Credits
 
-FreeDeck Launcher is an independent project and is not affiliated with Amazon. Fire TV is a trademark of
-Amazon.com, Inc. The Home-button approach is the same one used by the open-source *Home on Fire* app.
+FreeDeck Launcher is an independent project and is not affiliated with, or endorsed by, Amazon or any app shown in the
+screenshots. Fire TV is a trademark of Amazon.com, Inc. The Home-button approach is the same one used by the
+open-source *Home on Fire* app. Weather data by [Open-Meteo.com](https://open-meteo.com).

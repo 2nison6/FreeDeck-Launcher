@@ -13,7 +13,7 @@ apks/
 
 | Version | File | Notes |
 | --- | --- | --- |
-| **1.0** | [`v1.0/FreeDeck-Launcher-v1.0.apk`](v1.0/FreeDeck-Launcher-v1.0.apk) | First release. Package `com.nison.freedeck`, 5.5 MB, signed with the FreeDeck release key. |
+| **1.0** | [`v1.0/FreeDeck-Launcher-v1.0.apk`](v1.0/FreeDeck-Launcher-v1.0.apk) | First release. Package `com.nison.freedeck`, 5.5 MB, signed with the FreeDeck release key (certificate SHA-256 `e30c7b6c…d4b8e250`). |
 
 ## Verify a download
 
